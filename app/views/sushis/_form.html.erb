@@ -1,0 +1,17 @@
+<%= form_for(@sushi) do |f| %>
+  <% if @sushi.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sushi.errors.count, "error") %> prohibited this sushi from being saved:</h2>
+
+      <ul>
+      <% @sushi.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
